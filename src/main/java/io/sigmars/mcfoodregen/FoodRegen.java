@@ -47,6 +47,8 @@ public final class FoodRegen extends JavaPlugin implements Listener {
                 .put(Material.COOKED_SALMON, 6.0)
                 .put(Material.COOKIE, 2.0)
                 .put(Material.DRIED_KELP, 1.0)
+                .put(Material.ENCHANTED_GOLDEN_APPLE, 4.0)
+                .put(Material.GOLDEN_APPLE, 4.0)
                 .put(Material.GOLDEN_CARROT, 6.0)
                 .put(Material.MELON_SLICE, 2.0)
                 .put(Material.MUSHROOM_STEW, 6.0)
@@ -89,13 +91,6 @@ public final class FoodRegen extends JavaPlugin implements Listener {
             if(poison.nextFloat() < chance){
                 player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 300, 1));
             }
-            // Regeneration
-            if((player.getHealth() + foodHealMap.get(food.getType())) < 20){
-                player.setHealth(player.getHealth() + foodHealMap.get(food.getType()));
-            }
-            else{
-                player.setHealth(20);
-            }
             // Enchanted golden apple and golden apple effects
             if(food.getType().equals(Material.ENCHANTED_GOLDEN_APPLE)){
                 player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 6000, 0));
@@ -106,6 +101,13 @@ public final class FoodRegen extends JavaPlugin implements Listener {
             if(food.getType().equals(Material.GOLDEN_APPLE)){
                 player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 2400, 0));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 600, 1));
+            }
+            // Regeneration
+            if((player.getHealth() + foodHealMap.get(food.getType())) < 20){
+                player.setHealth(player.getHealth() + foodHealMap.get(food.getType()));
+            }
+            else{
+                player.setHealth(20);
             }
         }
     }
@@ -142,6 +144,6 @@ public final class FoodRegen extends JavaPlugin implements Listener {
             public void run() {
                 event.getPlayer().setFoodLevel(18);
             }
-        }, 20L);
+        }, 20L); // wait 20 ticks after respawn to set food level.
     }
 }
