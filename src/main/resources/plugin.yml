@@ -4,4 +4,4 @@ main: io.sigmars.mcfoodregen.FoodRegen
 authors: [SigmaRS]
 description: Disables hunger, natural health regeneration and makes food regenerate players' health.
 website: https://github.com/SigmaRS/MCFoodRegen
-api-version: 1.13
+api-version: 1.8

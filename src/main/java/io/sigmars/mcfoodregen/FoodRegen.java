@@ -32,38 +32,29 @@ public final class FoodRegen extends JavaPlugin implements Listener {
         ImmutableMap<Material, Double> foodHealMap = new ImmutableMap.Builder<Material, Double>()
                 .put(Material.APPLE, 4.0)
                 .put(Material.BAKED_POTATO, 5.0)
-                .put(Material.BEETROOT, 1.0)
-                .put(Material.BEETROOT_SOUP, 6.0)
                 .put(Material.BREAD, 5.0)
                 .put(Material.CAKE, 14.0)
                 .put(Material.CARROT, 3.0)
-                .put(Material.CHORUS_FRUIT, 4.0)
-                .put(Material.TROPICAL_FISH, 1.0)
                 .put(Material.COOKED_CHICKEN, 6.0)
-                .put(Material.COOKED_COD, 5.0)
+                .put(Material.COOKED_FISH, 5.0)
                 .put(Material.COOKED_MUTTON, 6.0)
-                .put(Material.COOKED_PORKCHOP, 8.0)
+                .put(Material.GRILLED_PORK, 8.0)
                 .put(Material.COOKED_RABBIT, 5.0)
-                .put(Material.COOKED_SALMON, 6.0)
                 .put(Material.COOKIE, 2.0)
-                .put(Material.DRIED_KELP, 1.0)
-                .put(Material.ENCHANTED_GOLDEN_APPLE, 4.0)
                 .put(Material.GOLDEN_APPLE, 4.0)
                 .put(Material.GOLDEN_CARROT, 6.0)
-                .put(Material.MELON_SLICE, 2.0)
-                .put(Material.MUSHROOM_STEW, 6.0)
+                .put(Material.MELON, 2.0)
+                .put(Material.MUSHROOM_SOUP, 6.0)
                 .put(Material.POISONOUS_POTATO, 2.0)
                 .put(Material.POTATO, 1.0)
-                .put(Material.PUFFERFISH, 1.0)
                 .put(Material.PUMPKIN_PIE, 8.0)
                 .put(Material.RABBIT_STEW, 10.0)
-                .put(Material.BEEF, 3.0)
-                .put(Material.CHICKEN, 2.0)
-                .put(Material.COD, 2.0)
+                .put(Material.RAW_BEEF, 3.0)
+                .put(Material.RAW_CHICKEN, 2.0)
+                .put(Material.RAW_FISH, 2.0)
                 .put(Material.MUTTON, 2.0)
-                .put(Material.PORKCHOP, 3.0)
+                .put(Material.PORK, 3.0)
                 .put(Material.RABBIT, 3.0)
-                .put(Material.SALMON, 2.0)
                 .put(Material.ROTTEN_FLESH, 4.0)
                 .put(Material.SPIDER_EYE, 2.0)
                 .put(Material.COOKED_BEEF, 8.0)
@@ -76,7 +67,7 @@ public final class FoodRegen extends JavaPlugin implements Listener {
             player.getInventory().removeItem(new ItemStack(food.getType(), 1));
             // Poisoning
             float chance = 0.0F;
-            if (food.getType().equals(Material.CHICKEN)) {
+            if (food.getType().equals(Material.RAW_CHICKEN)) {
                 chance = 0.3F;
             }
 
@@ -92,13 +83,13 @@ public final class FoodRegen extends JavaPlugin implements Listener {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 300, 1));
             }
             // Enchanted golden apple and golden apple effects
-            if(food.getType().equals(Material.ENCHANTED_GOLDEN_APPLE)){
+            if(food.isSimilar(new ItemStack(Material.GOLDEN_APPLE, 1,(short) 1))){
                 player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 6000, 0));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 6000, 0));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 2400, 16));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 4000, 2));
             }
-            if(food.getType().equals(Material.GOLDEN_APPLE)){
+            if(food.isSimilar(new ItemStack(Material.GOLDEN_APPLE, 1,(short) 0))){
                 player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 2400, 0));
                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 600, 1));
             }
