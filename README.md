@@ -1,6 +1,16 @@
 # MCFoodRegen
 This Bukkit plugin replaces Minecraft default food mechanics. Hunger and natural health generation are now disabled and food regenerates health.
 
+## Comparision to similiar plugins
+X|MCFoodRegen | OldDays | RPG Config
+-|------------|---------|-----------
+Configurable|❌ (for now)|✔️|✔️
+Aditional features|❌|✔️|✔️
+Uses PlayerItemConsume event instead of PlayerInteractEvent|✔️|❌|❌
+Works with all vanilla foods|✔️|❌|❌
+Works right out of the box|✔️|❌|❌
+Configurable|❌|✔️|✔️
+
 ## Compiling
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
