@@ -7,8 +7,8 @@ X|MCFoodRegen | OldDays | RPG Config
 Configurable|❌ (for now)|✔️|✔️
 Aditional features|❌|✔️|✔️
 Uses PlayerItemConsume event instead of PlayerInteractEvent|✔️|❌|❌
-Works with all vanilla foods|✔️|❌|❌
-Works right out of the box|✔️|❌|❌
+Works with all vanilla foods without configuring|✔️|❌|❌
+Works right out of the box (download, install and play)|✔️|❌|❌
 Configurable|❌|✔️|✔️
 
 ## Compiling
