@@ -69,23 +69,43 @@ public final class FoodRegen extends JavaPlugin implements Listener {
         ItemStack food = event.getItem();
         Player player = event.getPlayer();
         event.setCancelled(true);
-        if(food.getType() != Material.GOLDEN_APPLE|| food.getType() != Material.ENCHANTED_GOLDEN_APPLE){
-            if(player.getHealth() < 20){
-                player.getInventory().removeItem(new ItemStack(food.getType(), 1));
-                if((player.getHealth() + foodHealMap.get(food.getType())) < 20){
-                    player.setHealth(player.getHealth() + foodHealMap.get(food.getType()));
-                }
-                else{
-                    player.setHealth(20);
-                }
-                float chance = 0f;
-                if(food.getType() == Material.CHICKEN){chance = 0.3f;}
-                if(food.getType() == Material.SPIDER_EYE){chance = 1.0f;}
-                if(food.getType() == Material.ROTTEN_FLESH){chance = 0.8f;}
-                Random poison = new Random();
-                if(poison.nextFloat() < chance){
-                    player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 300, 1));
-                }
+        if(player.getHealth() < 20){
+            // Remove item
+            player.getInventory().removeItem(new ItemStack(food.getType(), 1));
+            // Poisoning
+            float chance = 0.0F;
+            if (food.getType().equals(Material.CHICKEN)) {
+                chance = 0.3F;
+            }
+
+            if (food.getType().equals(Material.SPIDER_EYE)) {
+                chance = 1.0F;
+            }
+
+            if (food.getType().equals(Material.ROTTEN_FLESH)) {
+                chance = 0.8F;
+            }
+            Random poison = new Random();
+            if(poison.nextFloat() < chance){
+                player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 300, 1));
+            }
+            // Regeneration
+            if((player.getHealth() + foodHealMap.get(food.getType())) < 20){
+                player.setHealth(player.getHealth() + foodHealMap.get(food.getType()));
+            }
+            else{
+                player.setHealth(20);
+            }
+            // Enchanted golden apple and golden apple effects
+            if(food.getType().equals(Material.ENCHANTED_GOLDEN_APPLE)){
+                player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 6000, 0));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 6000, 0));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 2400, 16));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 4000, 2));
+            }
+            if(food.getType().equals(Material.GOLDEN_APPLE)){
+                player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 2400, 0));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 600, 1));
             }
         }
     }
@@ -93,8 +113,8 @@ public final class FoodRegen extends JavaPlugin implements Listener {
     // Disable natural health regeneration
     @EventHandler (ignoreCancelled = true)
     public void onRegen(EntityRegainHealthEvent event) {
-        if (event.getEntity().getType() == EntityType.PLAYER){
-            if (event.getRegainReason().toString() == "REGEN" | event.getRegainReason().toString() == "SATIATED"){
+        if (event.getEntity().getType().equals(EntityType.PLAYER)){
+            if (event.getRegainReason().toString().equals("REGEN") || event.getRegainReason().toString().equals("SATIATED")){
                 event.setCancelled(true);
             }
         }
