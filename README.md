@@ -49,7 +49,7 @@ mvn clean package
 
 ## Authors
 
-* **DouglasB2310** - *Initial work*
+* **douglasb2310** - *Initial work*
 
 ## License
 
