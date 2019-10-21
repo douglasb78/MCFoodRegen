@@ -49,7 +49,7 @@ mvn clean package
 
 ## Authors
 
-* **SigmaRS** - *Initial work*
+* **DouglasB2310** - *Initial work*
 
 ## License
 
