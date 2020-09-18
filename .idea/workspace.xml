@@ -23,16 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a19dc9b7-681c-4f63-9e3f-fd882916775b" name="Default" comment="1.12.2 Support :)">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_13_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_13_1_R0_1_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_21.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCFoodRegen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MCFoodRegen.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/sigmars/mcfoodregen/FoodRegen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/douglasb2310/mcfoodregen/FoodRegen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -634,8 +626,16 @@
       <workItem from="1536641954650" duration="5767000" />
       <workItem from="1536648763135" duration="480000" />
       <workItem from="1536649269740" duration="1285000" />
-      <workItem from="1600443104367" duration="2998000" />
+      <workItem from="1600443104367" duration="3633000" />
     </task>
+    <task id="LOCAL-00001" summary="1.12.2 Support :)">
+      <created>1600446399069</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600446399069</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -664,6 +664,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.12.2 Support :)" />
     <option name="LAST_COMMIT_MESSAGE" value="1.12.2 Support :)" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="118" key="Vcs.Push.Dialog.v2" timestamp="1600446406749">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="275" y="118" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1600446406749" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
