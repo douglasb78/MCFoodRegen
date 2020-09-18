@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MCFoodRegen" />
         <module name="OrdemCore" />
+        <module name="MCFoodRegen" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MCFoodRegen" target="1.8" />
+      <module name="MCFoodRegen" target="1.12.2" />
       <module name="OrdemCore" target="1.8" />
     </bytecodeTargetLevel>
   </component>
