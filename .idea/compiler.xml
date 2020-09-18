@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MCFoodRegen" target="1.12.2" />
+      <module name="MCFoodRegen" target="1.8" />
       <module name="OrdemCore" target="1.8" />
     </bytecodeTargetLevel>
   </component>
